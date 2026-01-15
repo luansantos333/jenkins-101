@@ -16,9 +16,10 @@ pipeline {
         steps{
 
           echo "Setting up virtual environment"
+          sh '''
           python3 -m venv myapp 
           ./myapp/bin/activate
-  
+          '''
 
           }
           
