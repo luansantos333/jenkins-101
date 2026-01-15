@@ -11,11 +11,24 @@ pipeline {
     }
 
     stages {
+        stage('Requirements') {
+            steps {
+                echo "Installing Requirements.."
+                sh '''
+                cd myapp
+                pip install -r requirements.txt 
+                '''
+            }
+
+
+
+        }
+
         stage('Build') {
             steps {
                 echo "Building.."
                 sh '''
-                echo "doing build stuff.."
+                python3 myapp/hello.py
                 '''
             }
         }
