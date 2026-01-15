@@ -11,6 +11,22 @@ pipeline {
     }
 
     stages {
+        stage('Virtual Environment') {
+
+        steps{
+
+          echo "Setting up virtual environment"
+          python3 -m venv myapp 
+          ./myapp/bin/activate
+  
+
+          }
+          
+
+
+          }
+
+
         stage('Requirements') {
             steps {
                 echo "Installing Requirements.."
